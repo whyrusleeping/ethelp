@@ -63,9 +63,9 @@ func EncodeEthString(s string) string {
 	return lstr + hexval + pad
 }
 
-func WaitForTx(tx string) (interface{}, error) {
+func WaitForTx(host, tx string) (interface{}, error) {
 	for {
-		res, err := MakeRpcCall("eth_getTransactionReceipt", []interface{}{tx})
+		res, err := MakeRpcCallWithHost(host, "eth_getTransactionReceipt", []interface{}{tx})
 		if err != nil {
 			return nil, err
 		}
