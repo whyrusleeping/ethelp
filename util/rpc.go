@@ -63,8 +63,9 @@ func EncodeEthString(s string) string {
 	return lstr + hexval + pad
 }
 
-func WaitForTx(host, tx string) (interface{}, error) {
-	for {
+func WaitForTx(host, tx string, timeout time.Duration) (interface{}, error) {
+	start := time.Now()
+	for time.Since(start) < timeout {
 		res, err := MakeRpcCallWithHost(host, "eth_getTransactionReceipt", []interface{}{tx})
 		if err != nil {
 			return nil, err
@@ -74,6 +75,7 @@ func WaitForTx(host, tx string) (interface{}, error) {
 		}
 		time.Sleep(time.Second)
 	}
+	return nil, fmt.Errorf("timed out waiting for transaction to go through")
 }
 
 func SendTransaction(host string, txp *TransactionParams) (string, error) {
