@@ -10,6 +10,12 @@
       "hash": "QmVahSzvB3Upf5dAW15dpktF6PXb4z9V5LohmbcUqktyF4",
       "name": "cli",
       "version": "0.0.0"
+    },
+    {
+      "author": "whyrusleeping",
+      "hash": "QmSYy1fYbh8wBH7TJyC9BJwfwt5UVWWLWaKpN4gSrNRRxi",
+      "name": "go-ethereum",
+      "version": "0.0.0"
     }
   ],
   "gxVersion": "0.11.0",
@@ -17,6 +23,6 @@
   "license": "",
   "name": "ethelp",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
-  "version": "0.0.3"
+  "version": "0.0.4"
 }
 

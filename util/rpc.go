@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	oldkeccak "github.com/ethereum/go-ethereum/crypto/sha3"
+	oldkeccak "gx/ipfs/QmSYy1fYbh8wBH7TJyC9BJwfwt5UVWWLWaKpN4gSrNRRxi/go-ethereum/crypto/sha3"
 )
 
 type Rpc struct {
